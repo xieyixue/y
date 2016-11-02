@@ -2,7 +2,7 @@ FROM       ubuntu:14.04
 MAINTAINER xyx
 
 RUN apt-get update
-RUN apt-get -y install python-pip git libmysqlclient-dev
+RUN apt-get -y install python-pip git libmysqlclient-dev python-setuptools python-dev
 RUN mkdir /data
 
 
