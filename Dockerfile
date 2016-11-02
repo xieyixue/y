@@ -8,8 +8,8 @@ RUN mkdir /data
 
 RUN pip install Django==1.8.15 MySQL-python==1.2.5 djangorestframework==3.1.0
 
-ADD run.sh
+ADD run.sh /run.sh
 
 EXPOSE 80
 
-CMD    ["run.sh"]
+CMD ["run.sh"]
