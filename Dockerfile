@@ -2,7 +2,7 @@ FROM       ubuntu:14.04
 MAINTAINER xyx
 
 RUN apt-get update
-RUN apt-get install python-pip git
+RUN apt-get -y install python-pip git
 RUN mkdir /data
 
 WORKDIR /data
