@@ -8,4 +8,4 @@ class CmdSerializers(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Cmd
-        fields = ('name', 'cmd', 'status', 'result')
+        fields = ('id', 'name', 'cmd', 'status', 'result')
