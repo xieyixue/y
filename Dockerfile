@@ -10,7 +10,9 @@ RUN apt-get update && \
     && apt-get clean \
     && apt-get autoclean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-RUN mkdir /data
+
+RUN mkdir /app
+COPY . /app
 
 ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
