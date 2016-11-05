@@ -1,12 +1,19 @@
 FROM       ubuntu:14.04
 MAINTAINER xyx
 
-RUN apt-get update
-RUN apt-get -y install python-pip git libmysqlclient-dev python-setuptools python-dev
+RUN apt-get update && \
+    apt-get -y install python-pip \
+    git \
+    libmysqlclient-dev \
+    python-setuptools \
+    python-dev \
+    && apt-get clean \
+    && apt-get autoclean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 RUN mkdir /data
 
-
-RUN pip install Django==1.8.15 MySQL-python==1.2.5 djangorestframework==3.1.0 django-celery==3.1.17 celery==3.1.23
+ADD requirements.txt requirements.txt
+RUN pip install -r requirements.txt
 
 ADD run.sh /run.sh
 
