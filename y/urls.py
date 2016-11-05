@@ -16,10 +16,12 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from rest_framework import routers
 from api import views
+from task import views as taskViews
 
 router = routers.DefaultRouter()
 router.register('users', views.UserViewSet)
 router.register('todos', views.TodoViewSet)
+router.register('cmd', taskViews.CmdViewSet)
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
