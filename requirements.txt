@@ -1,3 +1,4 @@
 Django==1.8.15
 MySQL-python==1.2.5
 djangorestframework==3.1.0
+django-celery==3.1.17
