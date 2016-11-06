@@ -13,8 +13,8 @@ RUN apt-get update && \
     && apt-get autoclean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN mkdir /app
-COPY . /app
+RUN mkdir /app/y
+COPY . /app/y
 
 ADD requirements.txt requirements.txt
 RUN pip install -r requirements.txt
