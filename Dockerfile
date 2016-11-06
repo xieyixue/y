@@ -7,6 +7,7 @@ RUN apt-get update && \
     libmysqlclient-dev \
     python-setuptools \
     python-dev \
+    libffi-dev \
     libssl-dev \
     && apt-get clean \
     && apt-get autoclean \
