@@ -1,5 +1,5 @@
-FROM       ubuntu:14.04
-MAINTAINER xyx
+FROM ubuntu:14.04
+MAINTAINER xyx_0410@163.com
 
 RUN apt-get update && \
     apt-get -y install python-pip \
