@@ -108,5 +108,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 try:
     from local_settings import *
-except Exception:
-    print "No Local Settings" 
+except ImportError:
+    print(u"No Local Settings")
