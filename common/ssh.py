@@ -82,6 +82,13 @@ class SshStore(object):
         ssh = self.store.get(md5)
         return ssh
 
+    def get_or_create(self, host):
+        md5 = self.hash_host(host)
+        if md5 in self.store:
+            return self.store.get(md5)
+        else:
+            return self.create(host)
+
     def delete(self, host):
         md5 = self.hash_host(host)
         if md5 in self.store:
@@ -91,5 +98,7 @@ class SshStore(object):
 
     @staticmethod
     def hash_host(host):
-        return hashlib.md5.update(host).hexdigest()
+        md5 = hashlib.md5()
+        md5.update(str(host))
+        return md5.hexdigest()
 
